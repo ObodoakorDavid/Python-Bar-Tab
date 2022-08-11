@@ -13,9 +13,10 @@ class Tab:
         self.total = 0
         self.items = []
 
-    def add(self, item):
-        self.items.append(item)
-        self.total = self.total + self.menu[item]
+    def add(self, *args):
+        for item in args:
+            self.items.append(item)
+            self.total = self.total + self.menu[item]
 
     def print_bill(self):
         for item in self.items:
